@@ -1,0 +1,62 @@
+controls:
+  - id: GOV-01
+    domain: Governance
+    title: AI accountability and ownership
+    objective: Ensure named business, risk, and technical owners are accountable for the AI lifecycle.
+    risk: Unclear accountability can allow material AI risks to remain untreated.
+    frameworks: ["NIST AI RMF GOVERN 1.1", "ISO/IEC 42001 cl. 5.3", "IIA governance"]
+  - id: GOV-02
+    domain: Governance
+    title: AI use-case approval and risk acceptance
+    objective: Require documented approval and risk acceptance before production use.
+    risk: Unapproved or misunderstood AI use may exceed organizational risk appetite.
+    frameworks: ["NIST AI RMF GOVERN 1.2", "ISO/IEC 42001 cl. 6.1", "IIA risk management"]
+  - id: DATA-01
+    domain: Data
+    title: Training and retrieval data governance
+    objective: Establish provenance, quality, retention, and permitted-use controls for AI data.
+    risk: Poor or unauthorized data can cause biased, inaccurate, or unlawful outcomes.
+    frameworks: ["NIST AI RMF MAP 2.3", "ISO/IEC 42001 Annex A.7", "OWASP LLM03"]
+  - id: SEC-01
+    domain: Security
+    title: Prompt injection resistance
+    objective: Test direct and indirect prompt injection and enforce trust boundaries.
+    risk: Attackers may override instructions, disclose data, or invoke unsafe actions.
+    frameworks: ["NIST AI RMF MEASURE 2.7", "ISO/IEC 42001 Annex A.9", "OWASP LLM01"]
+  - id: SEC-02
+    domain: Security
+    title: Sensitive information protection
+    objective: Prevent secrets and personal data from entering prompts or outputs without authorization.
+    risk: Sensitive data may be exposed to users, vendors, logs, or downstream systems.
+    frameworks: ["NIST AI RMF MANAGE 2.4", "ISO/IEC 42001 Annex A.7", "OWASP LLM02"]
+  - id: MOD-01
+    domain: Model Assurance
+    title: Independent validation
+    objective: Independently validate performance, limitations, safety, and change impacts.
+    risk: Material defects may enter production without effective challenge.
+    frameworks: ["NIST AI RMF MEASURE 2.5", "ISO/IEC 42001 cl. 9.1", "IIA objectivity"]
+  - id: MOD-02
+    domain: Model Assurance
+    title: Hallucination and factuality testing
+    objective: Measure unsupported-output rates using representative and adversarial cases.
+    risk: Users may rely on plausible but inaccurate AI output.
+    frameworks: ["NIST AI RMF MEASURE 2.3", "ISO/IEC 42001 Annex A.6", "OWASP LLM09"]
+  - id: HUM-01
+    domain: Human Oversight
+    title: Meaningful human review
+    objective: Define when humans must review, override, or stop AI-supported decisions.
+    risk: Automation bias may cause inappropriate reliance on AI recommendations.
+    frameworks: ["NIST AI RMF GOVERN 3.2", "ISO/IEC 42001 Annex A.8", "IIA due professional care"]
+  - id: OPS-01
+    domain: Operations
+    title: Output monitoring and incident response
+    objective: Monitor defined thresholds and investigate, contain, and report AI incidents.
+    risk: Harmful drift or incidents may continue undetected.
+    frameworks: ["NIST AI RMF MANAGE 4.1", "ISO/IEC 42001 cl. 10.2", "OWASP LLM10"]
+  - id: OPS-02
+    domain: Operations
+    title: Tool and agency restrictions
+    objective: Apply least privilege, action confirmation, and transaction boundaries to AI agents.
+    risk: Excessive agency may permit unauthorized or irreversible actions.
+    frameworks: ["NIST AI RMF MANAGE 2.2", "ISO/IEC 42001 Annex A.9", "OWASP LLM06"]
+

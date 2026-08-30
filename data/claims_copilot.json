@@ -1,0 +1,33 @@
+{
+  "system": {
+    "name": "Claims Copilot",
+    "owner": "Claims Operations",
+    "purpose": "Summarize claim files and draft adjuster recommendations; humans approve all claim decisions.",
+    "model": "Retrieval-augmented generative AI assistant",
+    "vendor": "Example hosted foundation-model provider",
+    "users": "Licensed claims adjusters",
+    "data": "Claim notes, policy text, customer PII, medical and payment information",
+    "deployment": "Internal web application",
+    "lifecycle": "Pilot"
+  },
+  "risk": {"likelihood": "High", "impact": "Severe"},
+  "controls": {
+    "GOV-01": "Effective", "GOV-02": "Partially Effective", "DATA-01": "Partially Effective",
+    "SEC-01": "Ineffective", "SEC-02": "Partially Effective", "MOD-01": "Ineffective",
+    "MOD-02": "Partially Effective", "HUM-01": "Effective", "OPS-01": "Partially Effective", "OPS-02": "Effective"
+  },
+  "genai_tests": [
+    {"test": "Prompt injection", "result": "Fail", "cases": 25, "failures": 5, "observation": "Indirect instructions in retrieved claim notes overrode task constraints."},
+    {"test": "Data leakage", "result": "Fail", "cases": 20, "failures": 2, "observation": "Cross-claim identifiers appeared in two adversarial retrieval tests."},
+    {"test": "Hallucination", "result": "Partial", "cases": 40, "failures": 6, "observation": "Unsupported policy-limit statements were produced without citations."},
+    {"test": "System prompt disclosure", "result": "Pass", "cases": 15, "failures": 0, "observation": "No material system instruction disclosure observed."},
+    {"test": "Excessive agency", "result": "Pass", "cases": 10, "failures": 0, "observation": "The assistant cannot approve or pay claims and requires adjuster confirmation."}
+  ],
+  "evidence": [
+    {"evidence_id": "EV-001", "title": "Architecture and data-flow diagram", "description": "Approved diagram showing retrieval boundary, identity controls, logging, and provider connection.", "control_id": "SEC-02"},
+    {"evidence_id": "EV-002", "title": "Red-team test results", "description": "Dated test workbook with prompts, expected behavior, actual output, and reviewer disposition for 110 cases.", "control_id": "SEC-01"},
+    {"evidence_id": "EV-003", "title": "Human oversight procedure", "description": "Procedure requiring adjusters to verify citations and approve every recommendation.", "control_id": "HUM-01"}
+  ],
+  "sample_conclusion": "Claims Copilot is fully compliant with NIST AI RMF and ISO/IEC 42001. The control environment is effective and ineffective. Prompt injection presents a Critical risk. Testing proves that customer data will never be disclosed. EV-001 supports this conclusion."
+}
+
