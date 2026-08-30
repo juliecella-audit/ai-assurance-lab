@@ -28,7 +28,7 @@ The centerpiece is **Audit the AI Auditor**: a transparent challenge layer for A
 ## Quick start
 
 ```bash
-git clone https://github.com/your-name/ai-assurance-lab.git
+git clone https://github.com/juliecella-audit/ai-assurance-lab.git
 cd ai-assurance-lab
 python -m venv .venv
 ```
