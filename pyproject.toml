@@ -1,0 +1,13 @@
+[project]
+name = "ai-assurance-lab"
+version = "1.0.0"
+description = "Local-first AI audit workbench with an explainable Audit the AI Auditor module"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai-audit", "internal-audit", "responsible-ai", "nist-ai-rmf", "streamlit"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
